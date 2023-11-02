@@ -2,4 +2,5 @@
 
 Ohjelman voi aloittaa komennoilla:\
     ```source venv/bin/activate```\
-    ```flask run```
+    ```flask run```\
+    ```deactivate```
