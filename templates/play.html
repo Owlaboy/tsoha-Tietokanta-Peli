@@ -1,0 +1,15 @@
+Sarakkeiden määrä: {{ count }}
+<hr>
+{{ data_to_use }}
+<hr>
+
+<form action="/result" method="POST">
+    <label for="tables">Choose database table:</label>
+    <select name="tables" id="tables">
+        {% for table in tables %}
+            <option value="{{ table.tablename }}">{{ table.tablename }}</option>
+        {% endfor %}
+    </select>
+    <br><br>
+    <input type="submit" value="Submit">
+</form>
