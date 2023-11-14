@@ -12,4 +12,6 @@ Peliä voitaisiin vaikeuttaa esimerkiksi tekemällä eri taulu joukkoja joissa o
     source venv/bin/activate
     pip install -r ./requirements.txt
     flask run
+    vaihotestoisesti:
+        flask run --debug
     deactivate

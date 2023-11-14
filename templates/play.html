@@ -1,4 +1,4 @@
-Sarakkeiden määrä: {{ count }}
+Pisteet: {{ score }}
 <hr>
 {{ data_to_use }}
 <hr>
@@ -12,4 +12,6 @@ Sarakkeiden määrä: {{ count }}
     </select>
     <br><br>
     <input type="submit" value="Submit">
+    <input type="hidden" name="correct_answer" value="{{ correct_answer }}">
+    <input type="hidden" name="score" value="{{ score }}">
 </form>
