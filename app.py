@@ -26,7 +26,7 @@ def index():
     return render_template("index.html", db_tables=tables_in_db, user_scores=top_3_scores) 
 
 @app.route("/play", methods=["GET", "POST"])
-def randRows():
+def play():
     if request.method == "POST":
         score = int(request.form["score"])
     
