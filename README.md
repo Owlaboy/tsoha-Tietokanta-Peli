@@ -13,6 +13,8 @@ Tällä hetkellä ohjelman pää toiminnallisuudet ovat valmiina. Käyttäjä p�
 
 Ohjelmassa pitää vielä kirjoittaa asennus scripti. Scriptillä käyttäjä pystyisi valitsemaan mitä tietokantaa hän haluaa käyttää. Jos käyttäjä haluaa käyttää omaa tietokantaansa scriptillä pitäisi pystyä kopioimaan käyttäjän tietokannan ettei omat tiedot muutu alkuperäisessä tietokannassa. Scripti lisäisi myös uuteen tietokantaan taulun johon tallennetaan käyttäjien pisteet.
 
+Ohjelmaan pitää vielä lisätä useampi taulu jotta pelin pelaaminen olisi haastavampaa.
+
 Haluaisin vielä implementoida jonkin laisen tavan jolla käyttäjä voisi valita mitkä taulut olisivat käytössä. Ehkä kotisivulla voitaisiin tehdä togglattavan listan josta käyttäjä voisi valita mitä tauluja käytettäisiin. Tällöin pitäsi myös muuntaa pisteytys taulua sisältämään myös mitä tauluja käyttäjä käytti pisteden saamiseen.
 
 Koodia pitäsi vielä refaktoroida ettei kaikki ohjelma logiikka olisi app.py tiedoston sisällä.
