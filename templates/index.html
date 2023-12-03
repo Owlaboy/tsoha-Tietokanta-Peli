@@ -1,18 +1,25 @@
-Käytössä olevat taulut: {{ count }}
+Tervetuloa tietokantapeliin!
+<br>
+Valitse taulut, joista haluat kysymyksiä: (normaalisti kaikki valittuna)
 <hr>
-{% for table in db_tables %}
-{{ table.tablename }}
-<hr>
-{% endfor %}
+
+<form action="/play" method="POST">
+    {% for table in db_tables %}
+    <input type="checkbox" id={{ table.tablename }} name="game_tables" value={{ table.tablename }} checked>
+    <label for= "game_tables"> {{ table.tablename }}</label><br>
+    <hr>
+    {% endfor %}
+    <input type="submit" value="Pelaa">
+    <input type="hidden" name="score" value="0">
+
+</form>
 <br>
 Korkeimmat 3 pisteet:
 <hr>
 {% for row in user_scores %}
-{{ row }}
+{{ row.player_name }}, {{ row.score }}
 <hr>
 {% endfor %}
 
-<form action="/play" method="POST">
-    <input type="submit" value="Pelaa">
-    <input type="hidden" name="score" value="0">
-</form>
+
+
