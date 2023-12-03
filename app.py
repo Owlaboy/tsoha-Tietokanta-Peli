@@ -52,9 +52,11 @@ def play():
 
     data_to_use=list(row_to_use)[random_column_index]
 
+    while type(data_to_use) == int:
+        random.randint(1,len(list(column_titles))-1)
+        data_to_use=list(row_to_use)[random_column_index]
 
     return render_template("play.html", count=len(row_to_use), data_to_use=data_to_use, tables=tables, correct_answer=table_to_use, score=score) 
-
 
 @app.route("/result", methods=["POST"])
 def result():

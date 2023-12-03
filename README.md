@@ -20,10 +20,19 @@ Haluaisin vielä implementoida jonkin laisen tavan jolla käyttäjä voisi valit
 Koodia pitäsi vielä refaktoroida ettei kaikki ohjelma logiikka olisi app.py tiedoston sisällä.
 
 
-#### Ohjelman voi aloittaa komennoilla:
-    source venv/bin/activate
+### Ohjelman asennus
+Luo tiedosto ``secretInfo.py`` ja lisää siihen tietokannan osoite muuttujaan esimerkiksi näin: `DB_URL = "postgresql://<käyttäjä>:<salasana>@localhost/<tietokannan_nimi>"`
+
+Ohjelmaa voi käyttää useammmalla tavalla. Ohjelman käyttöön kannattaa luoda uusi tietokanta, johon lisätään tauluja. Tähän uuteen tietokantaan pitää lisätä taulu `user_scores` taulu. Komento tälle löytyy ``schema.sql`` tiedostosta.
+
+`user_scores` taulun lisäksi tietokantaan pitää lisätä muita tauluja että peliä voi pelata. Jos haluat pelata peliä omalla tietokanalla kopio halutun tietokannan taulut uuteen tietokantaan. Jos peliä halutaan pelata joillain toisilla tauluilla, nämä voidaan tuoda tietokantaan komento riviltä venv ympäristössä komennolla: `python3 dataImport.py`
+
+Kun tietokantaan ollaan lisätty tarvittavat taulut, niin pelin voi aloittaa seuraavilla komennoilla:
+
     pip install -r ./requirements.txt
+    source venv/bin/activate
     flask run
-    vaihotestoisesti:
-        flask run --debug
+
+venv ympäristön voi sitten sulkea komennolla:
+
     deactivate
