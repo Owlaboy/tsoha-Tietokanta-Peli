@@ -1,0 +1,14 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+
+<div class="container">
+    
+Nimesi pitää olla ainakin kolmemerkkiä pitkä. Palaa takaisin ja valitse pidempi nimi.
+<br>
+<form action="/result" method="POST">
+    <input type="submit" value="Takaisin">
+    <input type="hidden" name="player_answer" value="{{ player_answer }}">
+    <input type="hidden" name="correct_answer" value="{{ correct_answer }}">
+    <input type="hidden" name="score" value="{{ score }}">
+    <input type="hidden" name="game_tables" value="{{ game_tables }}">
+</form>
+</div>

@@ -1,18 +1,24 @@
-Pisteet: {{ score }}
-<hr>
-{{ data_to_use }}
-<hr>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
 
-<form action="/result" method="POST">
-    <label for="tables">Choose database table:</label>
-    <select name="tables" id="tables">
-        {% for table in game_tables %}
-            <option value="{{ table }}">{{ table }}</option>
-        {% endfor %}
-    </select>
-    <br><br>
-    <input type="submit" value="Submit">
-    <input type="hidden" name="correct_answer" value="{{ correct_answer }}">
-    <input type="hidden" name="score" value="{{ score }}">
-    <input type="hidden" name="game_tables" value="{{ game_tables }}">
-</form>
+<div class="container">
+    <h3>
+        Pisteet: {{ score }}
+    </h3>
+    <hr>
+    {{ data_to_use }}
+    <hr>
+
+    <form action="/result" method="POST">
+        <label for="tables">Valitse tietokannan taulu:</label>
+        <select name="player_answer" id="player_answer">
+            {% for table in game_tables %}
+                <option value="{{ table }}">{{ table }}</option>
+            {% endfor %}
+        </select>
+        <br><br>
+        <input type="submit" value="Submit">
+        <input type="hidden" name="correct_answer" value="{{ correct_answer }}">
+        <input type="hidden" name="score" value="{{ score }}">
+        <input type="hidden" name="game_tables" value="{{ game_tables }}">
+    </form>
+</div>

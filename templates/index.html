@@ -1,6 +1,9 @@
-Tervetuloa tietokantapeliin!
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+<div class="container">
+<h1>Tervetuloa tietokantapeliin!
+</h1>
 <br>
-Valitse taulut, joista haluat kysymyksiä: (normaalisti kaikki valittuna)
+Valitse taulut, joista haluat kysymyksiä: (normaalisti kaikki valittuna, valitse ainakin 2) Pisteytys skaalautuu valittujen taulujen määrän mukaan.
 <hr>
 
 <form action="/play" method="POST">
@@ -13,13 +16,23 @@ Valitse taulut, joista haluat kysymyksiä: (normaalisti kaikki valittuna)
     <input type="hidden" name="score" value="0">
 
 </form>
-<br>
-Korkeimmat 3 pisteet:
-<hr>
-{% for row in user_scores %}
-{{ row.player_name }}, {{ row.score }}
-<hr>
-{% endfor %}
 
+<table class="table">
+    <h4>Top 3 pelaajaa:</h4>
+    <tr>
+        <th>Pelaajan nimi</th>
+        <th>Pisteet</th>
+        <th>Peli kerrat</th>
+    </tr>
+    {% for row in user_scores %}
+    <tr>
+        <td>{{ row.player_name }}</td>
+        <td>{{ row.score }}</td>
+        <td>{{ row[2] }}</td>
+    </tr>
+
+    {% endfor %}
+</table>
+</div>
 
 
